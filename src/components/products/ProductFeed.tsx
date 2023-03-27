@@ -1,4 +1,5 @@
 import Product from "./Product";
+import Image from "next/image";
 
 type Props = {
   products: Product[];
@@ -17,10 +18,13 @@ export default function ProductFeed({ products }: Props) {
         ))}
       </div>
 
-      <img
-        className="md:col-span-full"
+      <Image
+        className="md:col-span-full mx-auto"
         src="https://links.papareact.com/dyz"
-        alt=""
+        width={1700}
+        height={600}
+        loading="lazy"
+        alt="Product Banner"
       />
 
       {products.slice(5, products.length).map((product, index) => (
